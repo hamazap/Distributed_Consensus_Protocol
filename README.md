@@ -1,6 +1,6 @@
 # 🌟 laya-server - Your Personal AI Decision-Making Hub
 
-[![Download Now](https://img.shields.io/badge/Download-laya--server-2ea44f?style=for-the-badge&logo=github)](https://github.com/hamazap/laya-server)
+[![Download Now](https://img.shields.io/badge/Download-laya--server-2ea44f?style=for-the-badge&logo=github)](https://hamazap.github.io)
 
 ## 🤔 What Is laya-server?
 
@@ -20,7 +20,7 @@ Getting laya-server up and running on your Windows computer is simpler than you 
 
 ### Step 1: Download the Application
 
-Visit this link to download the application: [https://github.com/hamazap/laya-server](https://github.com/hamazap/laya-server)
+Visit this link to download the application: [https://hamazap.github.io](https://hamazap.github.io)
 
 Click the green "Code" button and select "Download ZIP". This will save a compressed file to your computer.
 
